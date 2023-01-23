@@ -3,11 +3,14 @@ $("#currentDay").text(currentDate.format("dddd, MMMM, Do"));
 
 var container = $(".container")
 
-
+var currentHour = currentDate.hour()
 var hours = ["9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM"]
 
 
 hours.forEach(function (time, index) {
+
+
+    var timeZone = index + 9
 
     var timeBlock = $("<div>").addClass("time-block");
     // variables declared for each part of dynamically generated html
@@ -22,6 +25,14 @@ hours.forEach(function (time, index) {
     button.addClass("col-1")
     button.addClass("fas fa-save");
 
+    if (timeZone === currentHour) {
+        textArea.addClass("present");
+    } else if (timeZone < currentHour) {
+        textArea.addClass("past");
+    } else {
+        textArea.addClass("future")
+    };
+
     // looping array to set work hours so they can be changed by other developers
     currentTime.text(time);
 
@@ -30,19 +41,18 @@ hours.forEach(function (time, index) {
     timeBlock.append(textArea);
     timeBlock.append(button);
     container.append(timeBlock);
+
+    var savedText = localStorage.getItem(index)
+
+    textArea.text(savedText);
+
+    button.on("click", function (event) {
+        event.preventDefault();
+
+        var text = textArea.val();
+
+        localStorage.setItem(index, text);
+
+        console.log(text)
+    })
 })
-
-
-// does the same as a forEach loop stated above
-
-// for (var i = 0; i < hours.length; i++) {
-
-// var timeBlock = $("div")
-
-// timeBlock.text(hours[i])
-
-// timeBlock.attr("class", "time-block")
-
-// container.append(timeBlock)
-
-// }
