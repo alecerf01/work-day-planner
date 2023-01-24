@@ -12,7 +12,7 @@ When user types in one of the schedule hours and press the save button on the ri
 
 **Below is the attached link for the deployed application**
 
-Click [here](https://alecerf01.github.io/Random-Password-Generator/) to go to my page.
+Click [here](https://alecerf01.github.io/work-day-planner/) to go to my page.
 
 ### Mock-Up
 
