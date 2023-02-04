@@ -18,4 +18,4 @@ Click [here](https://alecerf01.github.io/work-day-planner/) to go to my page.
 
 The following image shows the web application's appearance and functionality:
 
-![The Work Day Planner Page includes dynamically created HTML using css styling and javascript adding classes so that the page renders as shown](./assets/schedule-planner-mockup.png.png)
+![The Work Day Planner Page includes dynamically created HTML using css styling and javascript adding classes so that the page renders as shown](./assets/images/schedule-planner-mockup.png.png)
